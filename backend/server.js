@@ -4,7 +4,7 @@ const axios = require('axios');
 const bodyParser = require('body-parser');
 const cors = require('cors'); // Import the CORS middleware
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 const Retell = require('retell-sdk')
 
 // Use CORS middleware
