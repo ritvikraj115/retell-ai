@@ -15,14 +15,14 @@ function WebCall() {
   const [disconnect,setDisconnect]= useState(false);
   const navigate= useNavigate();
   
-  const backend= process.env.BACKEND_URL;
+  const backend= process.env.REACT_APP_BACKEND_URL;
   async function fetchAccessToken() {
     if(count==0){
     try {
       let i =0;
       const response = await axios.post(`${backend}/api/create-web-call`, {
-        agentId: process.env.AGENT_ID,
-        apiKey: process.env.API_KEY
+        agentId: process.env.REACT_APP_AGENT_ID,
+        apiKey: process.env.REACT_APP_API_KEY
       });
       console.log(response)
       setStatus('Access token received!');
