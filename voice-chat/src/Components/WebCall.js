@@ -20,9 +20,9 @@ function WebCall() {
     if(count==0){
     try {
       let i =0;
-      const response = await axios.post('http://localhost:5000/api/create-web-call', {
-        agentId: 'agent_7ad0b7831887877d349430b012',
-        apiKey: 'key_4e3f17c0de6e8388b3d61f4bd915'
+      const response = await axios.post(`${process.env.BACKEND_URL}/api/create-web-call`, {
+        agentId: process.env.AGENT_ID,
+        apiKey: process.env.API_KEY
       });
       console.log(response)
       setStatus('Access token received!');
