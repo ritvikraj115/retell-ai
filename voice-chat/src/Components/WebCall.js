@@ -15,12 +15,12 @@ function WebCall() {
   const [disconnect,setDisconnect]= useState(false);
   const navigate= useNavigate();
   
-
+  const backend= process.env.BACKEND_URL;
   async function fetchAccessToken() {
     if(count==0){
     try {
       let i =0;
-      const response = await axios.post(`${process.env.BACKEND_URL}/api/create-web-call`, {
+      const response = await axios.post(`${backend}/api/create-web-call`, {
         agentId: process.env.AGENT_ID,
         apiKey: process.env.API_KEY
       });
