@@ -5,7 +5,7 @@ import Wave from './Wave';
 import { Link, useNavigate } from 'react-router-dom';
 import { FcEndCall } from "react-icons/fc";
 
-function WebCall() {
+function WebCall({id}) {
   var count =0;
   const [status, setStatus] = useState('Initializing...');
   const retellClientRef = useRef(null);
@@ -21,7 +21,7 @@ function WebCall() {
     try {
       let i =0;
       const response = await axios.post(`${backend}/api/create-web-call`, {
-        agentId: process.env.REACT_APP_AGENT_ID,
+        agentId: id,
         apiKey: process.env.REACT_APP_API_KEY
       });
       console.log(response)
