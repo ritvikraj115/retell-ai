@@ -5,11 +5,17 @@ import WebCall from './Components/WebCall';
 
 
 function App() {
+  const [data, setData] = useState('');
+
+  // Function to receive data from the child component
+  const handleDataFromChild = (childData) => {
+    setData(childData);
+  };
   return (
     <>
     <Routes>
-      <Route path='/:id' element={<Home />}></Route>
-      <Route path='/webcall/:id' element={<WebCall />}></Route>
+      <Route path='/:id' element={<Home handleDataFromChild={handleDataFromChild} />}></Route>
+      <Route path='/webcall' element={<WebCall id={data}/>}></Route>
     </Routes>
     </>
   );
