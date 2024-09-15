@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { FaPhoneAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 
 
-
-function Home() {
+function Home({handleDataFromChild}) {
+  const {id}= useParams();
+  handleDataFromChild(id);
   return (
     <div className="App" style={styles.container}>
       <div  style={styles.title}>AI VOICE ASSISTANT</div>
