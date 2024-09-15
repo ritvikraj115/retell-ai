@@ -8,8 +8,8 @@ function App() {
   return (
     <>
     <Routes>
-      <Route path='/' element={<Home />}></Route>
-      <Route path='/webcall' element={<WebCall />}></Route>
+      <Route path='/:id' element={<Home />}></Route>
+      <Route path='/webcall/:id' element={<WebCall />}></Route>
     </Routes>
     </>
   );
